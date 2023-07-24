@@ -11,3 +11,7 @@ Apuntes Node JS
 
 ## Package-lock.json
 Contiene todas las dependencias que se instalaron en nuestro proyecto.
+
+## Probando la aplicación
+- node api.js
+- Abre un explorador con la ruta localhost:3000
