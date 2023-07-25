@@ -14,8 +14,49 @@ const port = 3000
 
 // request: donde viene toda la petición de un cliente
 // response: sirve para enviarle cosas al usuario.
+
+// Un endpoint es una ruta a la cual uno puede
+// acceder a traves de una petición realizada por
+// un explorador web o una aplicación móvil.
+
+// 200 Ok y regresar datos al cliente
+// 201 Ok creado y opcionalmente se puede regresar el id creado
+// 204 Ok No content (Regresa absolutamente nada) 
+// 204 Usado comunmente en PUT, PATCH Y DELETE
+
+// endpoint GET
+// Nos permite accesar a la ruta a traves del explorador web
 app.get('/', (req, res) => {
     res.status(200).send('Hola Evelyn')
+})
+
+// endpoint GET:id
+app.get('/:id', (req, res) => {
+    console.log(req.params)
+    res.status(200).send(req.params)
+})
+
+// endpoint POST
+// No podemos acceder directamente en la barra de navegación
+// Solo se puede acceder a traves de postman o desde la terminal
+app.post('/', (req, res) => {
+    res.status(201).send('Creando Evelyn')
+})
+
+// endpoint PUT
+app.put('/:id', (req, res) => {
+    console.log(req.params)
+    res.sendStatus(204)
+})
+
+// endpoint PATCH
+app.patch('/:id', (req, res) => {
+    res.sendStatus(204)
+})
+
+// endpoint DELETE
+app.delete('/:id', (req, res) => {
+    res.sendStatus(204)
 })
 
 // Habilitamos la aplicación para que escuche las
