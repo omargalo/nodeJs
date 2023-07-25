@@ -28,6 +28,7 @@ Revisa api.js
 * Atlas
 * Libreria Mongoose
 * npm install mongodb
+* npm i -S mongoose
 
 mongodb+srv://omargarcialopez13:<password>@clusteroga.iw9gwgc.mongodb.net/?retryWrites=true&w=majority
 
