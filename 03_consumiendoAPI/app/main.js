@@ -20,6 +20,9 @@ const loadInitialTemplate = () => {
     body.innerHTML = template
 }
 
+const getUsers = async () => {
+    
+}
 const addFormListener = () => {
     const userForm = document.getElementById('user-form')
     userForm.onsubmit = async (e) => {
@@ -27,7 +30,18 @@ const addFormListener = () => {
         const formData = new FormData(userForm)
         // Pasar los valores de un formulario a un objeto
         const data = Object.fromEntries(formData.entries())
-        console.log(data)
+        // Enviar los datos a nuestra API para que cree el recurso en mongoDB
+        await fetch('/users', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        // Limpiar el formulario
+        userForm.reset()
+        // Buscar los usuarios a la base de datos para pintarlos dentro de la interfaz
+        getUsers()
     }
 }
 
