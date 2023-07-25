@@ -30,5 +30,10 @@ Revisa api.js
 * npm install mongodb
 * npm i -S mongoose
 
-mongodb+srv://omargarcialopez13:<password>@clusteroga.iw9gwgc.mongodb.net/?retryWrites=true&w=majority
+## Crear index.js
+Agregar cadena de conexión:
+mongodb+srv://omargarcialopez13:chips2023@clusteroga.iw9gwgc.mongodb.net/miapp?retryWrites=true&w=majority
+
+## Crear modelo
+
 
