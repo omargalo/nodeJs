@@ -1,6 +1,10 @@
 // express es para asignar el framework de express
 // require es para importar dependencias de terceros
 const express = require('express')
+
+// Importando user.controller.js
+const user = require('./user.controller')
+
 // Ejecutamos la funcion express
 const app = express()
 // Indicamos en que puerto queremos que nuestra
@@ -21,14 +25,27 @@ const port = 3000
 
 // 200 Ok y regresar datos al cliente
 // 201 Ok creado y opcionalmente se puede regresar el id creado
-// 204 Ok No content (Regresa absolutamente nada) 
+// 204 Ok No content (Regresa absolutamente nada)
 // 204 Usado comunmente en PUT, PATCH Y DELETE
 
 // endpoint GET
 // Nos permite accesar a la ruta a traves del explorador web
+
+// Agregamos Endpoint utilizando el modulo externo
+
+app.get('/', user.list)
+app.get('/:id', user.get)
+app.post('/', user.create)
+app.put('/:id', user.update)
+app.patch('/:id', user.update)
+app.delete('/:id', user.destroy)
+
+
+/*
 app.get('/', (req, res) => {
     res.status(200).send('Hola Evelyn')
 })
+
 
 // endpoint GET:id
 app.get('/:id', (req, res) => {
@@ -58,6 +75,7 @@ app.patch('/:id', (req, res) => {
 app.delete('/:id', (req, res) => {
     res.sendStatus(204)
 })
+*/
 
 // Habilitamos la aplicación para que escuche las
 // peticiones desde un explorador.
