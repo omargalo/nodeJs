@@ -1,18 +1,23 @@
+// Importamos nuestro modelo de Users
+const Users = require('./User')
+
 // Gestionar usuarios
 const User = {
-    get: (req, res) => {
+    get: async (req, res) => {
         res.status(200).send('Este es un usuario')
     },
-    list: (req, res) => {
-        res.status(200).send('¡Hola Evelyn!')
+    list: async (req, res) => {
+        const users = await Users.find()
+        res.status(200).send(users)
     },
-    create: (req,res) => {
+    create: async (req,res) => {
+        console.log(req.body)
         res.status(201).send('Creando usuario')
     },
-    update: (req, res) => {
+    update: async (req, res) => {
         res.status(204).send('Actualizando usuario')
     },
-    destroy: (req,res) => {
+    destroy: async (req,res) => {
         res.status(204).send('Eliminando usuario')
     }
 }

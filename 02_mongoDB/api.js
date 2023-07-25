@@ -1,6 +1,8 @@
 // express es para asignar el framework de express
 // require es para importar dependencias de terceros
 const express = require('express')
+// Importando mongoose
+const mongoose = require('mongoose')
 
 // Importando user.controller.js
 const user = require('./user.controller')
@@ -10,6 +12,18 @@ const app = express()
 // Indicamos en que puerto queremos que nuestra
 // aplicación se ejecute
 const port = 3000
+
+// Un midleware es una función que se va a ejecutar cuando
+// realizemos alguna petición en nuestra aplicación para
+// poder realizar validaciones.
+// Toma todas la peticiones que vengan en formato JSON
+// para transformarlas en un objeto JavaScript y las
+// va a asignar a la propiedad de body.
+app.use(express.json())
+
+// Cadena de conexión a mongodb
+mongoose.connect('mongodb+srv://omargarcialopez13:chips2023@clusteroga.iw9gwgc.mongodb.net/miapp?retryWrites=true&w=majority')
+
 // Creamos una aplicación sencilla:
 // Le indicamos a express cual es la ruta del
 // navegador que tenemos que escribir para que
