@@ -26,11 +26,22 @@ const getUsers = async () => {
     // Creamos plantilla para poder mostrar el listado de recursos
     const template = user => `
         <li>
-            ${user.name} ${user.lastname} <button data-id="${user.id}">Eliminar</button>
+            ${user.name} ${user.lastname} <button data-id="${user._id}">Eliminar</button>
         </li>
     `
     const userList = document.getElementById('user-list')
     userList.innerHTML = users.map(user => template(user)).join('')
+    // Agregamos un event listener para poder eliminar los recursos
+    users.forEach(user => {
+        const userNode = document.querySelector(`[data-id="${user._id}"]`)
+        userNode.onclick = async e => {
+            await fetch(`/users/${user._id}`, {
+                method: 'DELETE',
+            })
+            userNode.parentNode.remove()
+            alert('Usuario eliminado con éxito')
+        }
+    })
 }
 
 const addFormListener = () => {
