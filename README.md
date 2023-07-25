@@ -32,7 +32,7 @@ Revisa api.js
 
 ## Crear index.js
 Agregar cadena de conexión:
-mongodb+srv://omargarcialopez13:chips2023@clusteroga.iw9gwgc.mongodb.net/miapp?retryWrites=true&w=majority
+mongodb+srv://<usuario>:<password>@clusteroga.iw9gwgc.mongodb.net/miapp?retryWrites=true&w=majority
 
 ## Crear modelo
 
