@@ -23,3 +23,11 @@ Revisa api.js
 * Crear archivo user.controller.js
 * Mover la lógica a este nuevo archivo
 * Importar user.controller.js en api.js
+
+## MongoDB
+* Atlas
+* Libreria Mongoose
+* npm install mongodb
+
+mongodb+srv://omargarcialopez13:<password>@clusteroga.iw9gwgc.mongodb.net/?retryWrites=true&w=majority
+
