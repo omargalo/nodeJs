@@ -19,10 +19,21 @@ const User = {
         res.status(201).send(savedUser._id)
     },
     update: async (req, res) => {
-        res.status(204).send('Actualizando usuario')
+        const {id} = req.params
+        const user = await Users.findOne({_id: id})
+        // Reemplazamos los datos que se encuentra en el usuario
+        // pero que vengan dentro del body de la petición
+        Object.assign(user, req.body)
+        await user.save()
+        res.sendStatus(204)
     },
     destroy: async (req,res) => {
-        res.status(204).send('Eliminando usuario')
+        const {id} = req.params
+        const user = await Users.findOne({_id: id})
+        if(user) {
+            user.deleteOne()
+        }
+        res.sendStatus(204)
     }
 }
 
