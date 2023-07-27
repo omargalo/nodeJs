@@ -49,4 +49,9 @@ BODY raw
 ## JWT
 Cuando el usuario se haya creado con exito, mondoDB nos generara un _id pero ya que este _id que nos genera mongoDB no esta encriptado en el siguiente paso vamos a encriptar este _id con un Jason Web Token (JWT)
 
-
+## Variables de entorno
+En la terminal
+```
+export SECRET=mi-string-secreto
+env
+```
