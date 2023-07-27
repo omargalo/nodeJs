@@ -36,4 +36,17 @@ mongodb+srv://<usuario>:<password>@clusteroga.iw9gwgc.mongodb.net/miapp?retryWri
 
 ## Crear modelo
 
+## Postman
+En postman accesamos a localhost:3000/register
+utilizamos el verbo POST
+HEADERS Content-Type application/json
+BODY raw
+{
+    "email": "omar@ogadevs.com"
+    "password": ""
+}
+
+## JWT
+Cuando el usuario se haya creado con exito, mondoDB nos generara un _id pero ya que este _id que nos genera mongoDB no esta encriptado en el siguiente paso vamos a encriptar este _id con un Jason Web Token (JWT)
+
 
