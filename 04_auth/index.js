@@ -36,6 +36,17 @@ app.listen(3000, () => {
     console.log('listening in port 3000')
 })
 /*
+En postman accesamos a localhost:3000/register
+utilizamos el verbo POST
+HEADERS Content-Type application/json
+BODY raw
+{
+    "email": "omar@ogadevs.com"
+    "password": "12345678"
+}
+*/
+
+/*
 Cuando el usuario se haya creado con exito, mondoDB nos generara
 un _id pero ya que este _id que nos genera mongoDB no esta encriptado
 en el siguiente paso vamos a encriptar este _id con un Jason Web Token
