@@ -89,6 +89,32 @@ const body = document.getElementsByTagName('body')[0]
 body.innerHTML = template
 }
 
+// Transformar los campos del formulario en un objeto JS
+const addLoginListener = () => {
+	const loginForm = document.getElementById('login-form')
+	loginForm.onsubmit = async (e) => {
+		e.preventDefault()
+		const formData = new FormData(loginForm)
+		const data = Object.fromEntries(formData.entries())
+		// Enviando datos al endpoint de login
+		const response = await fetch('/login', {
+			method: 'POST',
+			body: JSON.stringify(data),
+			headers: {
+				'Content-Type': 'application/json',
+			}
+		})
+		// Capturando la respuesta
+		const responseData = await response.text()
+		if(response.status >= 300) {
+			const errorNode = document.getElementById('error')
+			errorNode.innerHTML = responseData
+		} else {
+			console.log(responseData)
+		}
+	}
+}
+
 window.onload = () => {
 	const isLoggedIn = checkLogin()
 	if(isLoggedIn) {
@@ -96,5 +122,6 @@ window.onload = () => {
 	// Cuando el usuario no haya iniciado sesión
 	} else {
 		loadLoginTemplate()
+		addLoginListener()
 	}
 }

@@ -46,7 +46,7 @@ const Auth = {
     register: async (req, res) => {
         const { body } = req
         try {
-            const isUser = await User.fingOne({ email: body.email })
+            const isUser = await User.findOne({ email: body.email })
             if(isUser) {
                 res.send('El usuario ya existe')
             } else {

@@ -4,8 +4,9 @@ const app = express()
 const Animal = require('./animal.controller')
 // Object destructuring
 const { Auth, isAuthenticated } = require('./auth.controller')
-const port = 3000
+const port = 5500
 
+mongoose.set("strictQuery", false)
 mongoose.connect('mongodb+srv://omargarcialopez13:chips2023@clusteroga.iw9gwgc.mongodb.net/auth?retryWrites=true&w=majority')
 
 app.use(express.json())
