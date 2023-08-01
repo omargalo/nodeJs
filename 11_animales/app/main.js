@@ -59,8 +59,42 @@ const addFormListener = () => {
 	}
 }
 
-window.onload = () => {
+// Validar que el usuario haya iniciado sesión con éxito
+const checkLogin = () =>
+	localStorage.getItem('jwt')
+
+const animalsPage = () => {
 	loadInitialTemplate()
 	addFormListener()
-  getAnimals()
+  	getAnimals()
+}
+
+const loadLoginTemplate = () => {
+	const template = `
+	<h1>Login</h1>
+	<form id="login-form">
+		<div>
+			<label>Correo</label>
+			<input name="email" />
+		</div>
+		<div>
+			<label>Contraseña</label>
+			<input type="password" name="password" />
+		</div>
+		<button type="submit">Enviar</button>
+	</form>
+	<div id="error"></div>
+`
+const body = document.getElementsByTagName('body')[0]
+body.innerHTML = template
+}
+
+window.onload = () => {
+	const isLoggedIn = checkLogin()
+	if(isLoggedIn) {
+		animalsPage()
+	// Cuando el usuario no haya iniciado sesión
+	} else {
+		loadLoginTemplate()
+	}
 }
