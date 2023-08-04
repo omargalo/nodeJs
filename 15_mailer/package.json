@@ -1,0 +1,18 @@
+{
+  "name": "15_mailer",
+  "version": "1.0.0",
+  "description": "mailer app",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Omar Garcia",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}
