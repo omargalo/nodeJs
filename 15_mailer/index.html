@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mailer App</title>
-    <script src="main.js"></script>
 </head>
 <body>
     <h1>Mailer App</h1>
-    <form action="" id="mailer-form">
+    <form id="mailer-form">
         <div>
-            <label for="">Para:</label>
+            <label>Para:</label>
             <input name="to" />
         </div>
         <div>
-            <label for="">Asunto:</label>
+            <label>Asunto:</label>
             <input name="subject" />
         </div>
         <div>
-            <label for="">Mensaje:</label>
-            <textarea name="html" id="" cols="30" rows="10"></textarea>
+            <label>Mensaje:</label>
+            <textarea name="html"></textarea>
         </div>
         <button type="submit">Enviar</button>
     </form>
     <div id="error"></div>
+    <script src="main.js"></script>
 </body>
 </html>

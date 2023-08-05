@@ -26,3 +26,11 @@ npm i -S express dotenv @sendgrid/mail
   }
 
 ### index.js
+
+### Sendgrid
+Email API
+Integration guide
+API key name: mailer
+Copy generated key and paste it inside .env
+SGKEY=paste generated key and save de file
+FROM=registered mail
